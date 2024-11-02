@@ -10,6 +10,6 @@ git commit -m "%date:~0,4%Äê%date:~5,2%ÔÂ%date:~8,2%ÈÕ %time:~0,8%"
 
 git push origin master
 
-timeout /t 2
+timeout /t 5
 
 exit
