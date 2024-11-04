@@ -2,9 +2,9 @@
 
 @title bat ½»»¥Ö´ĞĞgitÃüÁî
 
-C:
+E:
 
-cd C:\\Users\\admin\\Desktop\\subscribe
+cd E:\Users\zouw\Desktop\subscribe
 
 git add v2ray*.txt clash*.txt sing*.txt *.cmd
 
