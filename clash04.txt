@@ -1,4 +1,4 @@
-# 该数据由https://freev2rayclash.github.io/提供，更新时间2025-01-01 18:06:52
+# 该数据由https://freev2rayclash.github.io/提供，更新时间2025-01-01 22:10:11
 
 mixed-port: 7890
 allow-lan: false

@@ -1,4 +1,4 @@
-# 该数据由https://freev2rayclash.github.io/提供，更新时间2025-01-01 18:07:11
+# 该数据由https://freev2rayclash.github.io/提供，更新时间2025-01-01 22:10:11
 
 port: 7890
 socks-port: 7891
