@@ -1,4 +1,4 @@
-# 该数据由https://v2rayshare.com/提供，更新时间2025-01-01 13:53:01
+# 该数据由https://v2rayshare.com/提供，更新时间2025-01-01 13:53:55
 
 mixed-port: 7890
 allow-lan: true
