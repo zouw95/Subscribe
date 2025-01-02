@@ -1,4 +1,4 @@
-# 该数据由https://v2raynode.cc提供，更新时间2025-01-02 15:06:24
+# 该数据由https://v2raynode.cc提供，更新时间2025-01-02 15:07:25
 
 ﻿port: 7890
 socks-port: 7891
