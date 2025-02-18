@@ -1,0 +1,163 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cqgzf-test31-config
+  namespace: cqgjj-test
+  annotations:
+    kubesphere.io/creator: admin
+    kubesphere.io/description: cqgzf测试环境31配置信息
+data:
+  application.yml: |-
+    server:
+      port: 8099
+      servlet:
+        session:
+          timeout: 86400 #86400=一天
+    spring:
+      application:
+        name: cqgzf
+      datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/cqgzf?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: root
+        hikari:
+          transaction-isolation: TRANSACTION_READ_COMMITTED
+      http:
+        encoding:
+          charset: utf-8
+          force: true
+      aop:
+        auto: true
+      redis:
+        host: 127.0.0.1
+        port: 6379
+        database: 0
+        password:
+      mail:
+        #smtp服务主机
+        host: smtp.163.com
+        port: 465
+        #发送邮件账户
+        username: 13778714244@163.com
+        #授权码
+        password: MNJUFOYUIBJAKWFG
+        #发件人
+        from: 13778714244@163.com
+        #主题
+        subject: 登录认证
+        #单位：秒
+        timeout: 180
+        properties:
+          mail:
+            debug: true
+            smtp:
+              starttls:
+                enable: true
+                required: true
+              auth: true
+              socketFactory:
+                class: javax.net.ssl.SSLSocketFactory
+                port: 465
+
+    mybatis-plus:
+      configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        map-underscore-to-camel-case: true
+      global-config:
+        db-config:
+          logic-delete-field: del_flag
+          logic-delete-value: 1
+          logic-not-delete-value: 0
+
+    logging:
+      config: classpath:logback.xml
+      level:
+        root: INFO #ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
+    #监控
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: '*'
+          base-path: /actuator
+      endpoint:
+        health:
+          show-details: always
+
+    HASOR_DATAQL_DATAWAY: true
+    HASOR_DATAQL_DATAWAY_ADMIN: true
+    HASOR_DATAQL_DATAWAY_API_URL: /api/
+    HASOR_DATAQL_DATAWAY_UI_URL: /interface-ui/
+    HASOR_DATAQL_FX_PAGE_DIALECT: mysql
+    #自定义配置属性
+    baidu:
+      map:
+        ak: cyYHjvGIAdGo6wlGrBF61bSf10miY7At
+        lng: 106.532734
+        lat: 29.606073
+
+    login:
+      auth:
+        url: http://127.0.0.1:8082/auth/scanQrCode
+        width: 200
+        height: 200
+        margin: 1
+
+
+    oauth:
+      auths:
+        github:
+          client_id: 190dfb3cda9821899550
+          client_secret: ad775777d4acc5da93e705ae5f6bc7bd905c5b38
+          redirect_url: http://localhost:9998/cqgzf/#/oauth/github
+          auth_url: https://github.com/login/oauth/authorize?response_type=code&client_id={client_id}&state={state}&redirect_uri={redirect_uri}
+          access_url: https://github.com/login/oauth/access_token
+          userInfoUrl: https://api.github.com/user
+
+        gitee:
+          client_id: c2e9ef3136d82587d00a0d38164819e55208431441dd4d62686c55e77c07ba26
+          client_secret: fbd4e533f56c009c96ea80997b298dac2f8b6efc9135900a52e38ca83aa7095f
+          redirect_url: http://localhost:9998/cqgzf/#/oauth/gitee
+          auth_url: https://gitee.com/oauth/authorize?response_type=code&client_id={client_id}&state={state}&redirect_uri={redirect_uri}
+          access_url: https://gitee.com/oauth/token
+          userInfoUrl: https://gitee.com/api/v5/user
+
+        baidu:
+          client_id: cyYHjvGIAdGo6wlGrBF61bSf10miY7At
+          client_secret: UFp8x9xDguRFEmP1DQwHRsN2vUooKKTI
+          redirect_url: http://localhost:9998/cqgzf/#/oauth/baidu
+          auth_url: https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id={client_id}&state={state}&redirect_uri={redirect_uri}
+          access_url: https://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&code={code}&client_id={client_id}&client_secret={client_secret}&redirect_uri={redirect_uri}
+          userInfoUrl: https://openapi.baidu.com/rest/2.0/passport/users/getInfo
+
+    crawling:
+      gitlab:
+        url: http://35.10.208.145
+        saveBasePath: E:\\Users\\zouw\\Desktop\\GitlabMergeRequest
+        cookiePath: ${crawling.gitlab.saveBasePath}\\cookie.ini
+
+    img:
+      ai:
+        server: http://127.0.0.1:8000
+        height:
+          min: 300
+          max: 400
+        ind:
+          min: 1
+          max: 46
+
+    #申请合并限制
+    release:
+      enable: true
+      maxTotal: 20
+
+    gitlab:
+      baseUrl: http://192.168.137.128:3000/api/v4
+      token: gZN3gwEEGJZrxiutA-tz
+      expire: 2030-02-01
+
+    ssh:
+      host: 192.168.31.131
+      user: root
+      password: root
